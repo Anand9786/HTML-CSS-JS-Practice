@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/magnify-image-hover/css/jquery.jqZoom.css">
+    <script src="/jquery-3.6.3.min.js"></script>
+    <script src="/magnify-image-hover/js/jquery.jqZoom.js"></script>
+</head>
+<body>
+    <div class="zoom-box">
+        <img id="pic" src="/aston-martin.jpg" width="300"/>
+    </div>
+    <script>
+        $(function(){
+            $("#pic").jqZoom({
+                selectorWidth: 40,
+                selectorHeight: 40,
+                viewerWidth: 200,
+                viewerHeight: 100
+            });
+        })
+    </script>
+</body>
+</html>

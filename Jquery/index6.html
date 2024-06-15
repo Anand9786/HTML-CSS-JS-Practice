@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <ul id="list"> <!-- grandparent -->
+        <li> <!-- parent -->
+            <span id="span1">item 1</span> <!-- child  -->
+        </li>
+        <li> <!-- parent -->
+            <span id="span2">item 2</span> <!-- child -->
+        </li>
+    </ul>
+    <script>
+        var elm = $("#span1").parent(); // for single parent Selected
+        var elm = $("#span1").parents(); // All the parent Selected
+        var elm = $("#span1").parentsUntil("body") // parent element selected till body
+        elm.css("border","1px solid red"); 
+
+
+        var elm = $("#list").children(); // All children selected
+        elm.css("border","1px solid red"); 
+        
+        var elm = $("#list").find("#span1"); // find and store element
+        elm.css("border","1px solid red"); 
+    </script>
+</body>
+</html>

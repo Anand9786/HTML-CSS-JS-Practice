@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/Flip-Clock/css/flipTimer.css">
+        <script src="/jquery-3.6.3.min.js"></script>
+        <script src="/Flip-Clock/js/jquery.flipTimer.js"></script>
+    </head>
+    <body>
+        <div class="flipTimer">
+            <div class="days"></div>
+            <div class="hours"></div>
+            <div class="minutes"></div>
+            <div class="seconds"></div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('.flipTimer').flipTimer({ 
+
+                // count up or countdown
+                direction: 'down', 
+
+                // the target <a href="https://www.jqueryscript.net/time-clock/">date</a>
+                date: 'Jun 20, 2024 08:30:30', 
+
+                // callback works only with direction = "down"
+                callback: function() { alert('times up!'); },
+
+                // custom date
+                seconds: false,
+                minutes: false,
+                hours: false,
+                days: false,
+                });
+            });
+        </script>
+    </body>
+</html>

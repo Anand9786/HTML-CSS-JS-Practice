@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="/jquery-3.6.3.min.js"></script>
+        <script>
+            // Document ready function run when all document file load and also used as $(function(){})
+            $(document).ready(function(){
+                $("#color-div").on({
+                    click: function(){
+                        $(this).css("background-color","red");
+                     },
+                    mouseenter: function(){
+                        $(this).css("background-color","green");
+                     },
+                    mouseleave: function(){
+                        $(this).css("background-color","yellow");
+                     }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- <p id="p1">p1</p>
+        <p class="p2">p2</p>
+        <p class="p2">p3</p> -->
+        <p class="para">p1</p>
+        <button class="btn">Click</button>
+        <br><br>
+        <div id="color-div" style="background-color: brown; height: 100px;
+            width: 100px;"></div>
+        <script>
+        // $(document).ready(function(){
+        //     alert("ok");
+        // })
+        // $(".p2").hide(); // hide function for class
+        // $("#p1").hide(); // hide function for id
+        // $("p").hide(); // hide function for tagname
+        // $("*").hide(); // hide function for all
+
+        // Click Function
+        // $(".btn").click(function(){
+        //     $(".para").hide();
+        //     $(this).hide();
+        // })
+
+        // Double Click Function
+        // $(".btn").dblclick(function(){
+        //     $(".para").hide();
+        //     $(this).hide();
+        // })
+
+        // Hover Function
+        // $("#color-div").hover(function(){
+        //     $(".para").hide();
+        // },
+        // function(){
+        //     $(".para").show();
+        // }
+        // )
+
+        // on function is used for use multiple event on single function
+        // $("#color-div").on({
+        //     click: function(){
+        //         $(this).css("background-color","red");
+        //     },
+        //     mouseenter: function(){
+        //         $(this).css("background-color","green");
+        //     },
+        //     mouseleave: function(){
+        //         $(this).css("background-color","yellow");
+        //     }
+        // });
+        </script>
+    </body>
+</html>

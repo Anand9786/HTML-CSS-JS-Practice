@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        .mystyle{
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: white;
+            font-size: 25px;
+            box-sizing: border-box;
+        }
+        .darkMode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">Click It</button>
+        <div id="myDiv">Div Element</div>
+        <script>
+            let button = document.getElementById("btn");
+            let element = document.getElementById("myDiv");
+            button.addEventListener("click",toggleClass);
+            button.addEventListener("click",toggleText);
+            button.addEventListener("click",toggleMode);
+            function toggleClass(){
+                element.classList.toggle("mystyle");
+            }
+            function toggleText(){
+                if(element.innerHTML == "Div Element"){
+                    element.textContent = "Element Changed"
+                }
+                else{
+                    element.textContent = "Div Element"
+                }
+            }
+            function toggleMode(){
+                document.body.classList.toggle("darkMode");
+            }
+          
+        </script>
+    </body>
+</html>

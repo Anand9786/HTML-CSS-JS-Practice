@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <style>
+      .slider {
+        text-align: center;
+        padding: 0;
+      }
+      .slider [class*="box"] {
+        float: left;
+        overflow: hidden;
+        border: 1px solid #efbcbd;
+        transition: all 1s;
+      }
+      .slider [class*="box"]:nth-child(5),
+      .slider [class*="box"]:nth-child(1) {
+        width: 140px;
+        height: 96px;
+        color: #e09496;
+        margin-top: 190px;
+      }
+      .slider [class*="box"]:nth-child(2),
+      .slider [class*="box"]:nth-child(4) {
+        width: 260px;
+        height: 176px;
+        border-color: #c92026;
+        color: #c92026;
+        margin-top: 110px;
+      }
+      .slider [class*="box"]:nth-child(3) {
+        width: 370px;
+        background: #c92026;
+        border-color: #c92026;
+        color: #fff;
+        height: 286px;
+      }
+      .slider [class*="box"]:nth-child(1),
+      .slider [class*="box"]:nth-child(2) {
+        border-right: none;
+      }
+      .slider [class*="box"]:nth-child(4),
+      .slider [class*="box"]:nth-child(5) {
+        border-left: none;
+      }
+      .slider .firstSlide {
+        -webkit-animation: firstChild 1s;
+        animation: firstChild 1s;
+      }
+      /*Animation for buyers landing page slider*/
+      @-webkit-keyframes firstChild {
+        0% {
+          width: 0;
+          height: 0;
+          margin-top: 306px;
+          padding: 0;
+        }
+        100% {
+          width: 140px;
+          height: 136px;
+          margin-top: 170px;
+          padding: 0 10px;
+        }
+      }
+      @keyframes firstChild {
+        0% {
+          width: 0;
+          height: 0;
+          margin-top: 306px;
+          padding: 0;
+        }
+        100% {
+          width: 140px;
+          height: 136px;
+          margin-top: 170px;
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container slider">
+      <div class="box1">
+        <h3>#1</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+      <div class="box2">
+        <h3>#2</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+      <div class="box3">
+        <h3>#3</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+      <div class="box4">
+        <h3>#4</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+      <div class="box5">
+        <h3>#5</h3>
+        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+    function rotate() {
+      var lastChild = $(".slider div:last-child").clone();
+      $(".slider div").removeClass("firstSlide");
+      $(".slider div:last-child").remove();
+      $(".slider").prepend(lastChild);
+      $(lastChild).addClass("firstSlide");
+    }
+
+    window.setInterval(function () {
+      rotate();
+    }, 4000);
+  </script>
+</html>

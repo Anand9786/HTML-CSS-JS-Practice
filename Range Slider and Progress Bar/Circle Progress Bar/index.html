@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width,
+                  initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <title>Document</title>
+      </head>
+      <body>
+            <figure onclick="changeColor()" class="pie-chart" id="pie-chart">
+            </figure> 
+            <script>
+                  var pie = document.getElementById("pie-chart");
+                  function changeColor(){
+                        pie.style.background = "radial-gradient( circle closest-side, transparent 66%, white 0 ), conic-gradient( #59a14f 0, #59a14f " + 80 + "%, #edc949 0, #edc949 100% )";
+                  }
+            </script>
+      </body>
+</html>

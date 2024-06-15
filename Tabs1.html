@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        .tab{
+            background-color: #f1f1f1;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            display: flex;
+        }
+        .tab button{
+            outline: none;
+            border: none;
+            padding: 15px 20px;
+            font-size: 15px;
+        }
+        .tab button:hover{
+            background-color: #ddd;
+        }
+        .tab button.active{
+            background-color: #ccc;
+        }
+        .tabcontent{
+            border: 1px solid #ccc;
+            border-top: none;
+            padding: 15px 20px;
+            display: none;
+            animation: fadeEffect 1s;
+        }
+        @keyframes fadeEffect {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        .topright{
+            float: right;
+            font-size: 25px;
+        }
+        .topright:hover{
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablink" onclick="openCity(event, 'London')"
+                id="defaultOpen">London</button>
+            <button class="tablink" onclick="openCity(event, 'Paris')">Paris</button>
+            <button class="tablink" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        </div>
+
+        <div id="London" class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'"
+                class="topright">&times</span>
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+        <div id="Paris" class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'"
+                class="topright">&times</span>
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+        <div id="Tokyo" class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'"
+                class="topright">&times</span>
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+        <script>
+        function openCity(event, cityName){
+            var i, tabcontent, tablink;
+        
+            // All .tabcontent element display none
+            tabcontent = document.getElementsByClassName('tabcontent');
+            for(i=0; i< tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove active class in all .tablinks element 
+            tablink = document.getElementsByClassName('tablink');
+            for(i = 0; i < tablink.length; i++){
+                tablink[i].className = tablink[i].className.replace(" active","")
+                // tablink[i].classList.remove("active");
+            }
+
+            // only add active class and display block on current click element
+            document.getElementById(cityName).style.display = 'block';
+            event.currentTarget.className += ' active';
+            // event.currentTarget.classList.add("active");
+        }
+
+        // onclicked event target returns
+        window.onclick = function(event) { 
+            console.log(event.target)
+        }
+
+        // defaultOpen id clicked when when window load
+        document.getElementById('defaultOpen').click();
+    </script>
+    </body>
+</html>

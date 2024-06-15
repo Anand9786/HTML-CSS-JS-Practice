@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .mystyle {
+                width: 100%;
+                padding: 25px;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+            }
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <button onclick="addClass()">Add Class</button>
+        <button onclick="removeClass()">Remove Class</button>
+        <div id="myDIV">
+            This is a DIV element.
+        </div>
+        <script>
+            function addClass(){
+                var div = document.getElementById("myDIV");
+                div.classList.add("mystyle");
+                // div.className += "mystyle";
+                // div.className = "mystyle";
+            }   
+            function removeClass(){
+                var div = document.getElementById("myDIV");
+                div.classList.remove("mystyle");
+            }
+        </script>
+    </body>
+</html>

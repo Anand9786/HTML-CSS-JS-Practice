@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="/jquery-3.6.3.min.js"></script>
+        <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .red{
+            background-color: red;
+        }
+        .circle{
+            border-radius: 50%;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="box" class="box red"></div>
+        <button id="btn">click</button>
+        <input type="">
+        <script>
+        $("#btn").click(function(){
+            $("#box").addClass("circle black"); // Add single & multiple classes
+            $("#box").removeClass("circle"); // Remove Classes
+            $("#box").toggleClass("circle"); // Toggle Class
+            var bg = $("#box").css("background-color");
+            alert(bg); // Get css Property
+            $("#box").css({
+                "background-color":"red",
+                "color":"black"
+            }); // set multiple color property
+            var data = $("#box").width();
+            alert(data); // also get width(), innerWidth(), outerWidth() same as a Height
+        })
+        var x=5, y=1;
+        var obj={
+            x:10
+        }
+        with(obj){
+            alert(y)
+        }
+    </script>
+    </body>
+</html>

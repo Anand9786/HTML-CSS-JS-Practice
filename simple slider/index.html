@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <img name="slide" width="400" height="200" />
+        <script>
+            var i = 0; 			// Start Point
+            var images = [];	// Images Array
+            var time = 1000;	// Time Between Switch
+	 
+            // Image List
+            images[0] = "/images/aston-martin.jpg";
+            images[1] = "/images/audi-rs-e-tron-gt.jpg";
+            images[2] = "/images/maserati-mc20.jpg";
+            images[3] = "/images/nio-et5.jpg";
+
+            // Change Image
+            function changeImg(){
+	            document.slide.src = images[i];
+
+	            // Check If Index Is Under Max
+	            if(i < images.length - 1){
+	              // Add 1 to Index
+	              i++; 
+	            } else { 
+	            	// Reset Back To O
+	            	i = 0;
+	            }
+
+	            // Run function every x seconds
+	            setTimeout(changeImg, time);
+            }
+
+            // Run function when page loads
+            window.onload=changeImg;
+    </script>
+    </body>
+</html>

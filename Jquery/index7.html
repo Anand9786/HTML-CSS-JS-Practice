@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <ul id="list">
+        <li>child 1</li>
+        <li>child 2</li>
+        <li id="item1">child 3</li>
+        <li>child 4</li>
+        <li>child 5</li>
+        <li id="item2">child 6</li>
+    </ul>
+    <script>
+        var elm = $("#item1").siblings(); // select all sibling element 
+        var elm = $("#item1").next(); // select next element 
+        var elm = $("#item1").nextAll(); // select next all element
+        var elm = $("#item1").nextUntil("#item2"); // select next all element till item2
+        elm.css("border","1px solid red"); // select all sibling element include item1  
+
+        var elm = $("#item1").prev(); // all property same as a next
+        
+    </script>
+</body>
+</html>

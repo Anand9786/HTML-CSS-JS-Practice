@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="Navbar">
+            <div class="Navbar__Link Navbar__Link-brand">
+                Website title
+            </div>
+            <div class="Navbar__Link Navbar__Link-toggle">
+                p
+            </div>
+            <nav class="Navbar__Items">
+                <div class="Navbar__Link">
+                    Longer Link
+                </div>
+                <div class="Navbar__Link">
+                    Longer Link
+                </div>
+                <div class="Navbar__Link">
+                    Link
+                </div>
+            </nav>
+            <nav class="Navbar__Items Navbar__Items--right">
+                <div class="Navbar__Link">
+                    Link
+                </div>
+                <div class="Navbar__Link">
+                    Link
+                </div>
+            </nav>
+        </div>
+        <script>
+            function classToggle() {
+                 const navs = document.querySelectorAll('.Navbar__Items');
+  
+                 navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+            };
+
+            document.querySelector('.Navbar__Link-toggle').addEventListener('click', classToggle);
+        </script>
+    </body>
+</html>

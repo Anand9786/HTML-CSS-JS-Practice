@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <button id="btn1">Button 1</button>
+    <input type="text" id="inp">
+    <script>
+        // Fetch Value of input
+        // $("#btn1").click(function(){
+        //     var value = $("#inp").val();
+        //     alert(value);
+        // })
+
+        //Add Value
+        // $("#btn1").click(function(){
+        //     $("#inp").val("Anand");
+        // })
+
+        //Attribute fetch
+        $("#btn1").click(function(){
+           var Attribute =  $("#inp").attr("type");
+           alert(Attribute); //get Attribute
+           $("#inp").attr("class","input"); //set Attribute 
+           $("#inp").attr({
+            "class":"input",
+            "href":"www.google.com" //set Multiple Attribute
+            });
+        })
+
+    </script>
+</body>
+</html>

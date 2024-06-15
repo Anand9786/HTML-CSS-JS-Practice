@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        .btn{
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .active, .btn:hover{
+            background-color: #666;
+            color: white;
+        }
+    </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Active Button</h1>
+        <p>Highlight the active/current (pressed) button.</p>
+
+        <div id="myDIV">
+            <button class="btn">1</button>
+            <button class="btn active">2</button>
+            <button class="btn">3</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+        </div>
+        <script>
+            var header = document.getElementById("myDIV")
+            var btn = header.getElementsByClassName("btn");
+            for(let i = 0; i<btn.length; i++){
+                btn[i].addEventListener("click", function(){
+                    // current variable date comes in array that's why select first element current[0]
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active","");
+                    // current[0].classList.remove("active");
+                    this.className += " active";
+                })
+            }
+        </script>
+    </body>
+</html>
